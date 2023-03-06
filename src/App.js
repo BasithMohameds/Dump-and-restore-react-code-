@@ -46,7 +46,7 @@ function App() {
   //dump function
   const mongoDbDump = () => {
     axios
-      .post(`http://localhost:5262/mongodb/dumpdb`, {
+      .post(process.env.REACT_APP_API_DUMP_API, {
         dumpDbUri,
       })
       .then((res) => {
@@ -66,7 +66,7 @@ function App() {
   //restore function
   const mongoDbRestore = () => {
     axios
-      .post(`http://localhost:5262/mongodb/restoredb`, {
+      .post(process.env.REACT_APP_API_RESTORE_API, {
         uri,
         selectedFolder,
       })
@@ -79,7 +79,7 @@ function App() {
 
   //existing dumped database list
   const showDatabaseList = () => {
-    axios.get(`http://localhost:5262/mongodb/folderlist`).then((res) => {
+    axios.get(process.env.REACT_APP_API_EXISTING_DB_NAMELIST).then((res) => {
       const folderName = res.data.message.map((folderNames) => folderNames);
       setFolderName(folderName);
       console.log(res.data);
