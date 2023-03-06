@@ -1,4 +1,4 @@
-// import "./header.css";
+import { memo } from "react";
 
 function Header() {
   return (
@@ -8,4 +8,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);

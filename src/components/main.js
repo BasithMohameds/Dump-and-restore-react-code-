@@ -24,7 +24,7 @@ function Dump({ updateUri, dumpDbUri, mongoDbDump, showResponse }) {
 
 function Restore({
   updateRestoreUri,
-  retoreDbUri,
+  uri,
   mongoDbRestore,
   showRestoreResponse,
   selectedFolder,
@@ -35,30 +35,36 @@ function Restore({
     <div className="main">
       <h1 className="dump-heading">Restore mongodb</h1>
       <br />
-      {/* 
+      <br />
       <div className="form-group">
-        <label htmlFor="role">Select DB:</label>
+        <label htmlFor="role" className="Select-DB">
+          Select Database:
+        </label>
         <select
           value={selectedFolder}
           onChange={checking}
-          style={{ padding: "5px" }}
+          style={{ padding: "7px", margin: "2px" }}
           required
         >
           <option value="">Select DB</option>
-          {folderName.map((role) => (
-            <option key={role} value={role}>
-              {role}
-            </option>
-          ))}
+          {folderName?.length &&
+            folderName.map((role, index) => (
+              <option key={index} value={role}>
+                {role}
+              </option>
+            ))}
         </select>
-        {selectedFolder && <p>Selected: {selectedFolder}</p>}
-      </div> */}
-
+        {selectedFolder && (
+          <p className="selected-Folder">Selected: {selectedFolder}</p>
+        )}
+      </div>
+      <br />
+      <br />
       <input
         type="text"
         className="dump-text"
         placeholder=" Enter Restore DB Uri"
-        value={retoreDbUri}
+        value={uri}
         onChange={updateRestoreUri}
       />
       <br />
@@ -73,5 +79,4 @@ function Restore({
   );
 }
 
-export { Dump };
-export { Restore };
+export { Dump, Restore };

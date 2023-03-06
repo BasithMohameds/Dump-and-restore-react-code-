@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 function Content({ handleDump, handleRestore }) {
   return (
     <div className="button-content">
@@ -13,4 +15,4 @@ function Content({ handleDump, handleRestore }) {
   );
 }
 
-export { Content };
+export default memo(Content);

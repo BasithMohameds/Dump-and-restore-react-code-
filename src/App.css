@@ -107,3 +107,15 @@ main {
 ::-webkit-input-placeholder {
   text-align: center;
 }
+
+.Select-DB {
+  margin-right: 50px;
+  font-size: large;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.selected-Folder {
+  margin-top: 20px;
+  margin-left: 60px;
+  color: #2d4dbf;
+  font-family: "Courier New", Courier, monospace;
+}
